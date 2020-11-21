@@ -1,4 +1,6 @@
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
 import org.json.*;
 
 
@@ -20,13 +22,20 @@ public class test {
             Files.writeString(Paths.get(DOCUMENTO_JSON), jsonPrettyPrintString, StandardCharsets.ISO_8859_1);
             System.out.println(jsonPrettyPrintString);
             System.out.println(doc);
-
+            System.out.println( "aaaaa" + json.getJSONObject("videoteca"));
             Gson gson = new Gson();
-            Pelicula[] peliculas = gson.fromJson(json.get("pelicula").toString(), Pelicula[].class);
+            JSONArray peliculas = json.getJSONObject("videoteca").getJSONArray("pelicula");
+
+
+
+           // Videoteca vids = gson.fromJson(json.get("videoteca").toString(), Videoteca.class);
+           /* Pelicula[] peliculas = gson.fromJson(json.get("pelicula").toString(), Pelicula[].class);
 
             for (Pelicula pelicula : peliculas) {
                 System.out.println(pelicula);
-            }
+            }*/
+            System.out.println(peliculas);
+
 
         } catch(JSONException | IOException je) {
             System.out.println(je.toString());
