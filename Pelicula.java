@@ -2,6 +2,8 @@ import java.util.List;
 
 public class Pelicula {
 
+
+
     private String titulo;
     private String sinopsis;
     private String genero;
@@ -18,7 +20,7 @@ public class Pelicula {
         this.enlace = enlace;
         this.agno = agno;
         this.duracion = duracion;
-        this.reparto = reparto; //copiar???
+        this.reparto = reparto;
     }
 
     public Pelicula(String titulo, String sinopsis, String enlace, int agno, int duracion, Reparto reparto) {
@@ -28,11 +30,19 @@ public class Pelicula {
         this.enlace = enlace;
         this.agno = agno;
         this.duracion = duracion;
-        this.reparto = reparto; //copiar???
+        this.reparto = reparto;
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public Reparto getReparto() {
+        return reparto;
     }
 
     @Override
