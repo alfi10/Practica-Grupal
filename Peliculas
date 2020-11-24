@@ -1,0 +1,13 @@
+
+import java.util.List;
+
+public class Peliculas {
+    private List<String> pelicula;
+
+    @Override
+    public String toString() {
+        return "Peliculas{" +
+                "pelicula=" + pelicula +
+                '}';
+    }
+}
