@@ -15,7 +15,7 @@ public class Actor
     @Override
     public String toString()
     {
-        return "Nombre del actor/actriz=" + nombre + ", Enlace de la Wikipedia=" + enlaceWikipedia;
+        return "Nombre: " + nombre + ", Enlace de la Wikipedia:" + enlaceWikipedia;
     }
 
 }
