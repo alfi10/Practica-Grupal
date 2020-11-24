@@ -24,7 +24,7 @@ public class programa {
                         return;
                     }
         }
-
+        System.out.println("La película no está registarda en nuestra videoteca");
     }
 
     public static void mostrarGeneros(Videoteca[] videotecas, String nombre){
@@ -54,6 +54,8 @@ public class programa {
                 return;
             }
         }
+
+        System.out.println("La videoteca " + nombre + " no existe");
     }
 
     public static void main(String[] args) {
@@ -84,7 +86,7 @@ public class programa {
                     // identamos el JSON y lo imprimimos en un archivo
                     String jsonPrettyPrintString = json_xml.toString(4);
                     Files.writeString(Paths.get(DOCUMENTO_JSON), jsonPrettyPrintString, StandardCharsets.ISO_8859_1);
-
+                    System.out.println("Archivo JSON generado con éxito");
                 }
                 else if (opcion.equals("2") || opcion.equals("3")){
                     //comprobamos que exista el archivo JSON
@@ -95,11 +97,19 @@ public class programa {
                         Gson gson = new Gson();
                         Videoteca[] videotecas =  new Videoteca[1];
                         videotecas[0] = gson.fromJson(json.get("videoteca").toString(), Videoteca.class);
+                        BufferedReader input_funcion = new BufferedReader(new InputStreamReader(System.in));
+                        String nombre = new String();
 
-                        if(opcion.equals("2"))
-                            mostrarActores("Terminator",videotecas);
-                        else
-                            mostrarGeneros(videotecas,"Videoteca 1");
+                        if(opcion.equals("2")) {
+                            System.out.println("Introduzca el nombre de la película:");
+                            nombre = input_funcion.readLine();
+                            mostrarActores(nombre, videotecas);
+                        }
+                        else {
+                            System.out.println("Introduzca el nombre de la videoteca\"");
+                            nombre = input_funcion.readLine();
+                            mostrarGeneros(videotecas, nombre);
+                        }
                     }
                     else
                         System.out.println("Genere el JSON (opción 1) antes de ejecutar esta opción");
