@@ -8,14 +8,14 @@ public class Videoteca {
     private int fecha;
 
 
-    public Pelicula(String nombre, String ubicacion, String peliculas, int fecha) {
+    public Videoteca(String nombre, String ubicacion, Peliculas peliculas, int fecha) {
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.peliculas = peliculas;
         this.fecha = fecha;
     }
 
-    public Reparto getPeliculas() {
+    public Peliculas getPeliculas() {
         return peliculas;
     }
 

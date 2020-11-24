@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class Reparto {
-    private List<String> actor;
+    private List<Actor> actor;
 
     @Override
     public String toString() {
