@@ -24,4 +24,7 @@ public class Videoteca {
         return "Nombre=" + nombre + ", Ubicacion=" + ubicacion + ", Peliculas=" + peliculas + ", fecha=" + fecha;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 }
