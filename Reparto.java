@@ -18,4 +18,8 @@ public class Reparto {
 
         return result.toString();
     }
+
+    public List<Actor> getActor() {
+        return actor;
+    }
 }

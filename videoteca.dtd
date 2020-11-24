@@ -1,5 +1,4 @@
 <?xml encoding="UTF-8"?>
-
 <!ELEMENT videoteca (nombre,ubicacion,fecha_actualizacion,peliculas)+>
 <!ELEMENT nombre (#PCDATA)>
 <!ELEMENT ubicacion (#PCDATA )>
